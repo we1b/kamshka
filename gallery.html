@@ -80,7 +80,7 @@
                 html += `
                 <div class="break-inside-avoid glass-panel rounded-3xl overflow-hidden group relative bg-white/40 border border-white hover:shadow-xl transition duration-500 fade-in flex flex-col">
                     <div class="cursor-pointer relative overflow-hidden" onclick="openLightbox('${imgSrc}')">
-                        <img src="${imgSrc}" loading="lazy" class="w-full h-auto block transform transition duration-700 group-hover:scale-105" 
+                        <img src="${imgSrc}" loading="lazy" class="w-full h-auto object-cover block transform transition duration-700 group-hover:scale-105" 
                              onerror="this.onerror=null; this.src='${fallbackImg}'">
                         <div class="absolute inset-0 bg-teal-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                             <div class="bg-white/90 text-teal-900 p-4 rounded-full shadow-lg transform scale-75 group-hover:scale-100 transition duration-300">
