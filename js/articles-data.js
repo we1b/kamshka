@@ -8,6 +8,7 @@ const articlesData = [
         date: "25 نوفمبر 2025",
         category: "تطوير الذات",
         coverImage: "images/article1.JPG",
+        likes: 1240,
         excerpt: "خطوات عملية لبناء عادات مستمرة بدون ضغط أو توتر، وكيف تحافظ على سلامك النفسي وسط زحمة المشتتات.",
         content: `
             <p>إحنا في كمشكاة مش مجرد منصة، إحنا مساحة آمنة وصديق حكيم للشباب العربي. هدفنا ناخد بإيدك وسط زحمة الحياة وتشتت السوشيال ميديا، ونقدم لك أدوات عملية مش مجرد تحفيز مزيف بيتبخر.</p>
@@ -27,6 +28,7 @@ const articlesData = [
         date: "20 نوفمبر 2025",
         category: "تطوير الذات",
         coverImage: "images/article2.JPG",
+        likes: 856,
         excerpt: "تأملات في كيفية مواجهة التحديات اليومية بالتوكل على الله والعمل المستمر دون استسلام للإحباط.",
         content: `
             <p>الجملة دي مش مجرد شعار، دي منهج حياة كامل. في أوقات كتير بنحس إن الطريق طويل أو إن الحمل تقيل، وهنا بيجي دور "الاستعانة" الحقيقية.</p>
@@ -45,6 +47,7 @@ const articlesData = [
         date: "15 نوفمبر 2025",
         category: "الصحة النفسية",
         coverImage: "images/article3.JPG",
+        likes: 2105,
         excerpt: "نصائح من واقع تجربتي لتقليل التشتت واستعادة التركيز في عالم مليء بالضوضاء الرقمية.",
         content: `
              <p>وسط زحمة الحياة وتشتت السوشيال ميديا، بنلاقي نفسنا بنضيع ساعات طويلة بدون أي فايدة حقيقية. الفخ ده بيسحب طاقتنا وتركيزنا وبيخلينا دايما في حالة من القلق والمقارنة المستمرة مع الآخرين.</p>
@@ -80,10 +83,29 @@ function renderArticlesList(containerId) {
     let html = '';
     articlesData.forEach(article => {
         html += `
-            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl flex flex-col">
-                <a href="${article.id}.html" class="block relative h-56 overflow-hidden">
-                    <img src="${article.coverImage}" class="w-full h-full object-cover transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/1200x630/dcfce7/065f46?text=غلاف+المقال'">
-                </a>
+            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl flex flex-col group relative">
+                
+                <div class="relative h-56 overflow-hidden">
+                    <a href="${article.id}.html" class="block w-full h-full">
+                        <img src="${article.coverImage}" class="w-full h-full object-cover transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/1200x630/dcfce7/065f46?text=غلاف+المقال'">
+                    </a>
+                    
+                    <!-- زرار المشاركة بيظهر لما الماوس ييجي على الصورة -->
+                    <div class="absolute top-4 left-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <button onclick="alert('تم نسخ رابط المقال للمشاركة!')" class="bg-white/90 backdrop-blur-sm text-emerald-700 p-2.5 rounded-full shadow-lg hover:bg-emerald-600 hover:text-white transition transform hover:scale-110" title="مشاركة">
+                            <i data-lucide="share-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- عدد التفاعلات (القلب) ثابت على الصورة -->
+                    <div class="absolute bottom-4 left-4">
+                        <div class="bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 text-red-500">
+                            <i data-lucide="heart" class="w-4 h-4 fill-current"></i>
+                            <span class="text-sm font-black mt-0.5">${article.likes}</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="p-6 flex flex-col flex-grow">
                     <div class="text-xs text-emerald-600 font-bold mb-2 flex items-center gap-1">
                         <i data-lucide="calendar" class="w-4 h-4"></i> ${article.date}
