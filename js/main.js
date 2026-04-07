@@ -14,35 +14,44 @@ function loadNavbarFooter() {
         <div class="container mx-auto px-4 flex justify-between items-center">
             <!-- اللوجو -->
             <a href="index.html" class="flex items-center gap-2 font-black text-2xl text-emerald-800 hover:scale-105 transition">
-                <img src="images/logo.png" class="w-10 h-10 drop-shadow-sm object-contain" alt="كمشكاة" onerror="this.src='images/ui/logo.png'; this.onerror=null;"> 
+                <img src="images/ui/logo.png" class="w-10 h-10 drop-shadow-sm object-contain" alt="كمشكاة" onerror="this.src='images/logo.png'; this.onerror=null;"> 
                 <span>كمشكاة</span>
             </a>
             
             <!-- القائمة على الديسكتوب -->
-            <div class="hidden md:flex items-center gap-1 bg-slate-100/50 p-1 rounded-full border border-slate-200">
-                <a href="index.html" class="px-4 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">الرئيسية</a>
-                <a href="about.html" class="px-4 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">من نحن</a>
-                <a href="articles.html" class="px-4 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">المقالات</a>
-                <a href="library.html" class="px-4 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">المكتبة</a>
-                <a href="gallery.html" class="px-4 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">المعرض</a>
-                <a href="contact.html" class="px-4 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">تواصل معنا</a>
+            <div class="hidden lg:flex items-center gap-1 bg-slate-100/50 p-1 rounded-full border border-slate-200">
+                <a href="index.html" class="px-3 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">الرئيسية</a>
+                <a href="about.html" class="px-3 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">من نحن</a>
+                <a href="start.html" class="px-3 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">البداية</a>
+                <a href="categories.html" class="px-3 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">الأقسام</a>
+                <a href="articles.html" class="px-3 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">المقالات</a>
+                <a href="library.html" class="px-3 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">المكتبة</a>
+                <a href="gallery.html" class="px-3 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">المعرض</a>
+                <a href="videos.html" class="px-3 py-2 rounded-full text-slate-600 font-bold text-sm hover:bg-white hover:text-emerald-600 transition">فيديو</a>
             </div>
 
-            <!-- زرار القائمة للموبايل -->
+            <!-- زرار النشرة البريدية (ديسكتوب) وزرار القائمة (موبايل) -->
             <div class="flex items-center gap-2">
-                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-slate-100 text-emerald-800 hover:bg-emerald-100 transition border border-slate-200">
+                <a href="newsletter.html" class="hidden md:flex bg-emerald-600 text-white px-4 py-2 rounded-xl font-bold hover:bg-emerald-700 transition shadow-md shadow-emerald-200 text-sm items-center gap-1">
+                    <i data-lucide="mail" class="w-4 h-4"></i> النشرة البريدية
+                </a>
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg bg-slate-100 text-emerald-800 hover:bg-emerald-100 transition border border-slate-200">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
 
         <!-- القائمة المنسدلة للموبايل -->
-        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-xl border-t border-slate-100 p-4 shadow-xl flex flex-col gap-2 md:hidden origin-top">
+        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full max-h-[80vh] overflow-y-auto bg-white/95 backdrop-blur-xl border-t border-slate-100 p-4 shadow-xl flex flex-col gap-2 lg:hidden origin-top">
             <a href="index.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="home" class="w-5 h-5 text-emerald-600"></i> الرئيسية</a>
             <a href="about.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="info" class="w-5 h-5 text-emerald-600"></i> من نحن</a>
+            <a href="start.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="rocket" class="w-5 h-5 text-emerald-600"></i> ابدأ من هنا</a>
+            <a href="categories.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="layers" class="w-5 h-5 text-emerald-600"></i> الأقسام</a>
             <a href="articles.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="book-open" class="w-5 h-5 text-emerald-600"></i> المقالات</a>
             <a href="library.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="library" class="w-5 h-5 text-emerald-600"></i> المكتبة</a>
             <a href="gallery.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="image" class="w-5 h-5 text-emerald-600"></i> المعرض</a>
+            <a href="videos.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="play-circle" class="w-5 h-5 text-emerald-600"></i> الفيديوهات</a>
+            <a href="newsletter.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="mail" class="w-5 h-5 text-emerald-600"></i> النشرة البريدية</a>
             <a href="contact.html" class="p-3 rounded-xl hover:bg-emerald-50 text-slate-700 font-bold flex items-center gap-3"><i data-lucide="phone" class="w-5 h-5 text-emerald-600"></i> تواصل معنا</a>
         </div>
     </nav>`;
