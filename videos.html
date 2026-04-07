@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | الفيديوهات</title>
+    <link rel="icon" type="image/png" href="images/ui/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="videos">
+    <div class="fixed-bg"><img src="images/ui/bg.jpg" onerror="this.style.display='none'"></div>
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto min-h-screen pb-16 fade-in">
+        <div class="text-center mb-12">
+            <div class="inline-block bg-red-100 p-4 rounded-2xl mb-4 shadow-sm hover:scale-110 transition-transform duration-300">
+                <i data-lucide="play-circle" class="w-10 h-10 text-red-600"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black text-emerald-900 mb-4 drop-shadow-sm">الفيديوهات 🎥</h1>
+            <p class="text-xl text-slate-600 font-bold max-w-2xl mx-auto">شروحات وتجارب عملية متصورة، عشان توصلك الفكرة بأبسط وأوضح طريقة.</p>
+        </div>
+
+        <!-- شبكة الفيديوهات -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- فيديو 1 -->
+            <div class="glass-panel p-6 rounded-3xl bg-white/80 border-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="aspect-video rounded-2xl overflow-hidden bg-slate-200 mb-5 shadow-inner">
+                    <!-- يوتيوب Iframe فقط حسب القاعدة -->
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FBID4TaQ6OE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h2 class="text-xl font-black text-slate-900 mb-2">كيف تبني وكيل ذكاء اصطناعي؟</h2>
+                <p class="text-slate-600 font-medium text-sm">شرح عملي ومبسط لبداية استخدام أدوات الأتمتة في شغلك لتوفير الوقت والمجهود.</p>
+            </div>
+
+            <!-- فيديو 2 -->
+            <div class="glass-panel p-6 rounded-3xl bg-white/80 border-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div class="aspect-video rounded-2xl overflow-hidden bg-slate-200 mb-5 shadow-inner">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HdU_jOthCDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h2 class="text-xl font-black text-slate-900 mb-2">ربط الأدوات ببعضها لزيادة الإنتاجية</h2>
+                <p class="text-slate-600 font-medium text-sm">طريقة عملية لتنظيم وقتك باستخدام التكنولوجيا عشان تتفرغ للمهام الأهم بتركيز.</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    <script src="js/main.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

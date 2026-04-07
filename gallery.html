@@ -4,175 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كمشكاة | معرض التصميمات</title>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-482MR7LT23"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-482MR7LT23');
-    </script>
-
     <link rel="icon" type="image/png" href="images/ui/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- مكتبة الأيقونات -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
-    
-    <script src="js/auth.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body data-page="gallery">
     <div class="fixed-bg"><img src="images/ui/bg.jpg" onerror="this.style.display='none'"></div>
     <div id="header-ph"></div> 
 
-    <!-- Lightbox -->
-    <div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 z-[9999] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-2">
-        <button class="absolute top-5 right-5 bg-white/10 text-white p-3 rounded-full hover:bg-white/20 transition z-50">
+    <!-- Lightbox Modal -->
+    <div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 z-[9999] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300">
+        <button class="absolute top-6 right-6 bg-white/10 text-white p-3 rounded-full hover:bg-white/20 transition-colors duration-300 z-50">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
-        <img id="lightbox-img" src="" class="max-h-[90vh] max-w-full rounded-lg shadow-2xl object-contain" onclick="event.stopPropagation()">
-        <a id="lightbox-download" href="#" download class="absolute bottom-8 bg-emerald-600 text-white px-8 py-3 rounded-full font-bold shadow-2xl flex items-center gap-2 hover:bg-emerald-700 transition transform hover:scale-105" onclick="event.stopPropagation()">
-            <i data-lucide="download" class="w-5 h-5"></i> تحميل
-        </a>
+        <img id="lightbox-img" src="" class="max-h-[85vh] max-w-full rounded-2xl shadow-2xl object-contain transition-transform duration-300 transform scale-95" onclick="event.stopPropagation()">
     </div>
 
-    <main class="pt-32 px-4 container mx-auto min-h-screen pb-12">
-        <div class="text-center mb-12 fade-in">
-            <h1 class="text-3xl md:text-5xl font-black text-emerald-900 mb-2">معرض التصميمات</h1>
-            <p class="text-slate-600 font-bold text-lg">إبداع متجدد . لمسة فنية</p>
+    <main class="pt-32 px-4 container mx-auto min-h-screen pb-16 fade-in">
+        <div class="text-center mb-12">
+            <div class="inline-block bg-purple-100 p-4 rounded-2xl mb-4 shadow-sm hover:scale-110 transition-transform duration-300">
+                <i data-lucide="palette" class="w-10 h-10 text-purple-600"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black text-emerald-900 mb-4 drop-shadow-sm">التغذية البصرية 🎨</h1>
+            <p class="text-slate-600 font-bold text-lg max-w-2xl mx-auto">مكان يجمع الإلهام والإبداع، عشان تشحن طاقتك البصرية وتشوف أفكار تتنفذ على أرض الواقع.</p>
         </div>
 
-        <div id="gallery-grid" class="masonry-grid"></div>
+        <!-- شبكة الصور (Masonry Layout) -->
+        <div class="masonry-grid max-w-6xl mx-auto">
+            <!-- صورة 1 -->
+            <div class="break-inside-avoid mb-6 glass-panel rounded-3xl overflow-hidden group relative bg-white/60 border border-white hover:shadow-2xl hover:shadow-purple-900/10 transition-all duration-500 hover:-translate-y-1">
+                <div class="cursor-pointer relative" onclick="openLightbox('images/1article.webp')">
+                    <img src="images/1article.webp" loading="lazy" class="w-full h-auto block transform transition duration-700 group-hover:scale-105" onerror="this.src='images/ui/bg.jpg'">
+                    <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                        <div class="bg-white/90 text-slate-900 p-4 rounded-full shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                            <i data-lucide="maximize-2" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="text-center mt-12">
-            <button id="load-more-gallery" class="bg-white text-emerald-800 px-8 py-3 rounded-full font-bold hover:bg-emerald-50 transition border border-emerald-200 shadow-md inline-flex items-center gap-2">
-                عرض المزيد <i data-lucide="arrow-down" class="w-5 h-5"></i>
-            </button>
+            <!-- صورة 2 -->
+            <div class="break-inside-avoid mb-6 glass-panel rounded-3xl overflow-hidden group relative bg-white/60 border border-white hover:shadow-2xl hover:shadow-purple-900/10 transition-all duration-500 hover:-translate-y-1">
+                <div class="cursor-pointer relative" onclick="openLightbox('images/2article.webp')">
+                    <img src="images/2article.webp" loading="lazy" class="w-full h-auto block transform transition duration-700 group-hover:scale-105" onerror="this.src='images/ui/bg.jpg'">
+                    <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                        <div class="bg-white/90 text-slate-900 p-4 rounded-full shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                            <i data-lucide="maximize-2" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- صورة 3 -->
+            <div class="break-inside-avoid mb-6 glass-panel rounded-3xl overflow-hidden group relative bg-white/60 border border-white hover:shadow-2xl hover:shadow-purple-900/10 transition-all duration-500 hover:-translate-y-1">
+                <div class="cursor-pointer relative" onclick="openLightbox('images/3article.webp')">
+                    <img src="images/3article.webp" loading="lazy" class="w-full h-auto block transform transition duration-700 group-hover:scale-105" onerror="this.src='images/ui/bg.jpg'">
+                    <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                        <div class="bg-white/90 text-slate-900 p-4 rounded-full shadow-lg transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                            <i data-lucide="maximize-2" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
     <div id="footer-ph"></div>
-
-    <script>
-        // 👇 قائمة بأسماء الصور الحقيقية التي رفعتها
-        const galleryImages = [
-            "image_78d31a.png", "image_79433b.png", "image_79afde.png", "image_7a28f7.png",
-            "image_7a2893.png", "image_7a3b5a.png", "image_8442aa.png", "image_849998.png",
-            "image_858637.png", "image_86140a.png", "image_8613e6.png", "image_861429.png",
-            "image_867239.png", "image_868be7.png", "image_868c2b.png", "image_868c0b.png",
-            "image_be6765.png", "image_0ecbe7.png", "image_1b09ae.png", "image_1b0d91.png"
-        ];
-
-        let visibleGalleryCount = 0;
-        const GALLERY_INCREMENT = 8; // عرض 8 صور في كل مرة
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('gallery-grid');
-            if(grid) grid.innerHTML = '';
-            loadGalleryBatch();
-
-            document.getElementById('load-more-gallery').addEventListener('click', () => {
-                loadGalleryBatch();
-            });
-            
-            // التأكد من تشغيل الأيقونات
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-        });
-
-        function loadGalleryBatch() {
-            const grid = document.getElementById('gallery-grid');
-            const btn = document.getElementById('load-more-gallery');
-            
-            let start = visibleGalleryCount;
-            let end = start + GALLERY_INCREMENT;
-
-            // إخفاء الزر لو الصور خلصت
-            if (start >= galleryImages.length) {
-                if(btn) btn.style.display = 'none';
-                return;
-            }
-            if (end >= galleryImages.length) {
-                end = galleryImages.length;
-                if(btn) btn.style.display = 'none';
-            }
-
-            let html = '';
-            for(let i=start; i<end; i++) {
-                const imgName = galleryImages[i];
-                // المسار: images/اسم_الصورة
-                const imgSrc = `images/${imgName}`;
-                // صورة بديلة لو الصورة الأصلية مش موجودة
-                const fallbackImg = `https://placehold.co/600x800/dcfce7/065f46?text=تصميم+${i+1}`;
-
-                html += `
-                <div class="break-inside-avoid mb-6 glass-panel rounded-2xl overflow-hidden group relative bg-white/40 border border-white hover:shadow-xl transition duration-300">
-                    <div class="cursor-pointer relative" onclick="openGalleryLightbox('${imgSrc}')">
-                        
-                        <img src="${imgSrc}" loading="lazy" class="w-full h-auto block transform transition duration-500 group-hover:scale-105" 
-                             onerror="this.onerror=null; this.src='${fallbackImg}'">
-                        
-                        <div class="absolute inset-0 bg-emerald-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <div class="bg-white/90 text-emerald-900 p-3 rounded-full shadow-lg transform scale-75 group-hover:scale-100 transition">
-                                <i data-lucide="zoom-in" class="w-6 h-6"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="p-3 flex justify-between items-center bg-white/80 backdrop-blur-md border-t border-white/50">
-                        <button onclick="toggleLike(${i})" class="flex items-center gap-1.5 text-slate-500 hover:text-red-500 transition group/like">
-                            <i data-lucide="heart" class="w-5 h-5 transition transform group-active/like:scale-125" id="heart-${i}"></i>
-                            <span id="likes-count-${i}" class="text-xs font-bold font-sans mt-0.5">0</span>
-                        </button>
-
-                        <button onclick="shareGalleryImage('${imgSrc}')" class="text-emerald-600 hover:bg-emerald-50 p-2 rounded-lg transition" title="مشاركة">
-                            <i data-lucide="share-2" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                </div>`;
-            }
-
-            grid.insertAdjacentHTML('beforeend', html);
-            visibleGalleryCount = end;
-            
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-            
-            if(typeof listenToLikes === 'function') {
-                listenToLikes(visibleGalleryCount);
-            }
-        }
-
-        function openGalleryLightbox(src) {
-            const lb = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            const dl = document.getElementById('lightbox-download');
-            img.src = src;
-            dl.href = src;
-            lb.classList.remove('hidden');
-            lb.classList.add('flex');
-        }
-
-        function closeLightbox() {
-            const lb = document.getElementById('lightbox');
-            lb.classList.add('hidden');
-            lb.classList.remove('flex');
-        }
-
-        function shareGalleryImage(src) {
-            const fullUrl = src.startsWith('http') ? src : window.location.origin + window.location.pathname.replace('gallery.html', '') + src;
-            if (navigator.share) {
-                navigator.share({ title: 'تصميم من كمشكاة', url: fullUrl }).catch(console.error);
-            } else {
-                navigator.clipboard.writeText(fullUrl);
-                alert('تم نسخ رابط الصورة!');
-            }
-        }
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/ui.js"></script>
 </body>
 </html>
