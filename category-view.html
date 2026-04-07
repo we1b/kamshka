@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطوير الذات | كمشكاة</title>
+    
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="category-view">
+    <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto min-h-screen pb-12 fade-in">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between mb-12 bg-white/50 p-6 rounded-3xl border border-white backdrop-blur-sm">
+            <div class="flex items-center gap-4 mb-4 md:mb-0">
+                <div class="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center shrink-0 shadow-inner">
+                    <i data-lucide="leaf" class="w-8 h-8 text-emerald-600"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-black text-emerald-900">تطوير الذات</h1>
+                    <p class="text-slate-600 font-bold">12 مقال متاح في هذا التصنيف</p>
+                </div>
+            </div>
+            <a href="categories.html" class="bg-white/80 text-emerald-700 px-6 py-2 rounded-full font-bold hover:bg-emerald-600 hover:text-white transition flex items-center gap-2 border border-emerald-100">
+                كل التصنيفات <i data-lucide="grid-2x2" class="w-4 h-4"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- مقال من التصنيف -->
+            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl flex flex-col">
+                <a href="article-001.html" class="block relative h-56 overflow-hidden">
+                    <img src="images/article1.JPG" class="w-full h-full object-cover transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/1200x630/dcfce7/065f46?text=مقال+1'">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <a href="article-001.html">
+                        <h2 class="text-2xl font-black text-emerald-900 mb-3 hover:text-emerald-600 transition">كيف تبني عادات حقيقية بهدوء؟</h2>
+                    </a>
+                    <p class="text-slate-600 font-semibold mb-6 flex-grow line-clamp-3">
+                        خطوات عملية لبناء عادات مستمرة بدون ضغط أو توتر، وكيف تحافظ على سلامك النفسي وسط زحمة المشتتات.
+                    </p>
+                    <a href="article-001.html" class="inline-flex items-center gap-2 text-emerald-700 font-bold hover:gap-3 transition-all">
+                        اقرأ المقال <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- مقال آخر -->
+            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl flex flex-col">
+                <a href="article-002.html" class="block relative h-56 overflow-hidden">
+                    <img src="images/article2.JPG" class="w-full h-full object-cover transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/1200x630/dcfce7/065f46?text=مقال+2'">
+                </a>
+                <div class="p-6 flex flex-col flex-grow">
+                    <a href="article-002.html">
+                        <h2 class="text-2xl font-black text-emerald-900 mb-3 hover:text-emerald-600 transition">استعن بالله ولا تعجز</h2>
+                    </a>
+                    <p class="text-slate-600 font-semibold mb-6 flex-grow line-clamp-3">
+                        تأملات في كيفية مواجهة التحديات اليومية بالتوكل على الله والعمل المستمر دون استسلام للإحباط.
+                    </p>
+                    <a href="article-002.html" class="inline-flex items-center gap-2 text-emerald-700 font-bold hover:gap-3 transition-all">
+                        اقرأ المقال <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

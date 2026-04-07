@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النشرة البريدية | كمشكاة</title>
+    
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="newsletter">
+    <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto max-w-3xl min-h-screen pb-12 flex items-center justify-center fade-in">
+        <div class="glass-panel p-10 md:p-16 rounded-3xl bg-white/70 border-white/80 shadow-2xl text-center relative overflow-hidden w-full">
+            
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-200 rounded-full blur-3xl opacity-50"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-200 rounded-full blur-3xl opacity-50"></div>
+
+            <div class="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-8 shadow-inner relative z-10">
+                <i data-lucide="mail" class="w-12 h-12 text-emerald-600"></i>
+            </div>
+            
+            <h1 class="text-4xl font-black text-emerald-900 mb-4 relative z-10">خلينا دايماً على تواصل</h1>
+            <p class="text-lg text-slate-600 font-bold mb-10 relative z-10">
+                اشترك في نشرتنا البريدية عشان يوصلك كل جديد من مقالات، كتب، وتصاميم ملهمة مباشرة على إيميلك.
+            </p>
+
+            <form onsubmit="event.preventDefault(); alert('تم الاشتراك بنجاح!');" class="relative z-10 flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="اكتب إيميلك هنا..." required class="flex-grow px-6 py-4 rounded-xl font-semibold outline-none focus:ring-2 focus:ring-emerald-500 transition shadow-sm text-left" dir="ltr">
+                <button type="submit" class="bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-200 flex items-center justify-center gap-2 whitespace-nowrap">
+                    اشترك الآن <i data-lucide="send" class="w-5 h-5"></i>
+                </button>
+            </form>
+            
+            <p class="text-xs text-slate-400 font-semibold mt-6 relative z-10">
+                مش هنبعتلك أي رسائل مزعجة (سبام)، وعد!
+            </p>
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

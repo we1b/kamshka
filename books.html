@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | المكتبة</title>
+    
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="books">
+    <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto min-h-screen pb-12 fade-in">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-emerald-900 mb-4">المكتبة</h1>
+            <p class="text-lg text-slate-600 font-bold">موارد وكتب لتبني وعي حقيقي</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <!-- الكتاب الأول -->
+            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl p-6 text-center flex flex-col items-center">
+                <a href="book-001.html" class="block w-full mb-6">
+                    <img src="images/book1.jpg" class="w-full h-64 object-cover rounded-xl shadow-md transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x600/dcfce7/065f46?text=كتاب+1'">
+                </a>
+                <h2 class="text-xl font-black text-emerald-900 mb-2">بوصلة النور</h2>
+                <p class="text-sm text-slate-500 font-bold mb-4">مصطفى عبد الناصر</p>
+                <a href="book-001.html" class="mt-auto bg-emerald-100 text-emerald-800 px-6 py-2 rounded-full font-bold hover:bg-emerald-600 hover:text-white transition w-full">
+                    تفاصيل الكتاب
+                </a>
+            </div>
+
+            <!-- الكتاب الثاني -->
+            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl p-6 text-center flex flex-col items-center">
+                <a href="book-002.html" class="block w-full mb-6">
+                    <img src="images/book2.jpg" class="w-full h-64 object-cover rounded-xl shadow-md transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x600/dcfce7/065f46?text=كتاب+2'">
+                </a>
+                <h2 class="text-xl font-black text-emerald-900 mb-2">دليل التعافي</h2>
+                <p class="text-sm text-slate-500 font-bold mb-4">مصطفى كمشكاة</p>
+                <a href="book-002.html" class="mt-auto bg-emerald-100 text-emerald-800 px-6 py-2 rounded-full font-bold hover:bg-emerald-600 hover:text-white transition w-full">
+                    تفاصيل الكتاب
+                </a>
+            </div>
+
+            <!-- الكتاب الثالث -->
+            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl p-6 text-center flex flex-col items-center">
+                <a href="book-003.html" class="block w-full mb-6">
+                    <img src="images/book3.jpg" class="w-full h-64 object-cover rounded-xl shadow-md transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x600/dcfce7/065f46?text=كتاب+3'">
+                </a>
+                <h2 class="text-xl font-black text-emerald-900 mb-2">عادات حقيقية</h2>
+                <p class="text-sm text-slate-500 font-bold mb-4">مصطفى عبد الناصر</p>
+                <a href="book-003.html" class="mt-auto bg-emerald-100 text-emerald-800 px-6 py-2 rounded-full font-bold hover:bg-emerald-600 hover:text-white transition w-full">
+                    تفاصيل الكتاب
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

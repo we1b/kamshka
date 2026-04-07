@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عادات حقيقية | كمشكاة</title>
+    
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="books">
+    <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto max-w-5xl min-h-screen pb-12 fade-in">
+        
+        <a href="books.html" class="inline-flex items-center gap-2 text-emerald-700 font-bold mb-8 hover:text-emerald-900 transition bg-white/50 px-4 py-2 rounded-full backdrop-blur-sm border border-white">
+            <i data-lucide="arrow-right" class="w-5 h-5"></i> العودة للمكتبة
+        </a>
+
+        <div class="glass-panel p-8 md:p-12 rounded-3xl bg-white/70 border-white/80 shadow-lg">
+            <div class="flex flex-col md:flex-row gap-10 items-center md:items-start">
+                
+                <div class="w-full md:w-1/3 shrink-0">
+                    <img src="images/book3.jpg" class="w-full rounded-2xl shadow-xl border-4 border-white" onerror="this.src='https://placehold.co/600x800/dcfce7/065f46?text=غلاف+الكتاب'">
+                </div>
+                
+                <div class="w-full md:w-2/3 flex flex-col justify-center">
+                    <div class="mb-4 inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold w-fit">
+                        <i data-lucide="book" class="w-4 h-4"></i> كتاب إلكتروني
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl font-black text-emerald-900 mb-4 leading-tight">عادات حقيقية</h1>
+                    <p class="text-xl text-emerald-600 font-bold mb-8 flex items-center gap-2">
+                        <i data-lucide="pen-tool" class="w-5 h-5"></i> تأليف: مصطفى عبد الناصر
+                    </p>
+                    
+                    <div class="prose prose-emerald max-w-none text-slate-700 font-semibold leading-relaxed mb-10">
+                        <p>
+                            بعيدا عن التحفيز المزيف، هذا الكتاب يقدم لك أدوات عملية لبناء عادات ثابتة لا تتأثر بتقلبات المزاج أو ضغط الحياة.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mt-auto">
+                        <a href="book/book3.pdf" download class="bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-700 transition shadow-lg shadow-emerald-200 flex items-center justify-center gap-3 text-lg flex-1">
+                            <i data-lucide="download" class="w-6 h-6"></i> تحميل الكتاب (PDF)
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | المكتبة الشاملة</title>
+    
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="library">
+    <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto max-w-5xl min-h-screen pb-12 fade-in">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-emerald-900 mb-4">المكتبة الشاملة</h1>
+            <p class="text-xl text-slate-600 font-bold">بوابة المعرفة والموارد الخاصة بكمشكاة</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- قسم الكتب -->
+            <a href="books.html" class="block group">
+                <div class="glass-panel p-10 rounded-3xl bg-white/60 border-white/80 hover:bg-white/90 transition duration-500 hover:shadow-xl h-full flex flex-col items-center text-center">
+                    <div class="w-24 h-24 rounded-full bg-emerald-100 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-500 shadow-inner">
+                        <i data-lucide="book-open" class="w-12 h-12 text-emerald-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-black text-emerald-900 mb-3">الكتب والموارد</h2>
+                    <p class="text-slate-600 font-semibold mb-6 flex-grow">كتب إلكترونية بي دي إف، وموارد قابلة للتحميل تساعدك في رحلة التغيير.</p>
+                    <span class="bg-emerald-600 text-white px-8 py-3 rounded-full font-bold group-hover:bg-emerald-700 transition w-full">
+                        تصفح الكتب
+                    </span>
+                </div>
+            </a>
+
+            <!-- قسم المرئيات -->
+            <a href="videos.html" class="block group">
+                <div class="glass-panel p-10 rounded-3xl bg-white/60 border-white/80 hover:bg-white/90 transition duration-500 hover:shadow-xl h-full flex flex-col items-center text-center">
+                    <div class="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-500 shadow-inner">
+                        <i data-lucide="play-circle" class="w-12 h-12 text-blue-600"></i>
+                    </div>
+                    <h2 class="text-3xl font-black text-emerald-900 mb-3">المرئيات والفيديوهات</h2>
+                    <p class="text-slate-600 font-semibold mb-6 flex-grow">محتوى مرئي ملهم، حلقات، وشروحات بتساعدك ترتب أفكارك.</p>
+                    <span class="bg-blue-600 text-white px-8 py-3 rounded-full font-bold group-hover:bg-blue-700 transition w-full">
+                        شاهد المرئيات
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

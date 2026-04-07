@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | التصنيفات</title>
+    
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="categories">
+    <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto min-h-screen pb-12 fade-in">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black text-emerald-900 mb-4">التصنيفات</h1>
+            <p class="text-lg text-slate-600 font-bold">اختار المجال اللي حابب تطور نفسك فيه</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <a href="category-view.html" class="block group">
+                <div class="glass-panel p-8 rounded-3xl bg-white/60 border-white/80 hover:-translate-y-2 transition duration-300 hover:shadow-xl flex items-center gap-6">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="leaf" class="w-8 h-8 text-emerald-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-emerald-900 mb-1">تطوير الذات</h2>
+                        <p class="text-slate-600 font-semibold text-sm">مقالات وخطوات عملية لبناء عادات صحيحة.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="category-view.html" class="block group">
+                <div class="glass-panel p-8 rounded-3xl bg-white/60 border-white/80 hover:-translate-y-2 transition duration-300 hover:shadow-xl flex items-center gap-6">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="brain" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-emerald-900 mb-1">الصحة النفسية</h2>
+                        <p class="text-slate-600 font-semibold text-sm">التعافي من المشتتات والضغوط بسلام نفسي.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="category-view.html" class="block group">
+                <div class="glass-panel p-8 rounded-3xl bg-white/60 border-white/80 hover:-translate-y-2 transition duration-300 hover:shadow-xl flex items-center gap-6">
+                    <div class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center shrink-0 group-hover:scale-110 transition duration-300">
+                        <i data-lucide="book" class="w-8 h-8 text-orange-600"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-emerald-900 mb-1">السيرة والتأملات</h2>
+                        <p class="text-slate-600 font-semibold text-sm">دروس وعبر من نور الوحي والسنة النبوية.</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

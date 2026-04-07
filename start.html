@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | البداية</title>
+    
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="start">
+    <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
+    
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto max-w-5xl min-h-screen pb-12 fade-in">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-emerald-900 mb-4">منين أبدأ؟</h1>
+            <p class="text-xl text-slate-600 font-bold">اختار الطريق اللي يناسبك دلوقتي، وإحنا معاك خطوة بخطوة</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <a href="articles.html" class="block group">
+                <div class="glass-panel p-8 rounded-3xl bg-white/60 border-white/80 hover:bg-white/90 transition duration-500 hover:shadow-xl h-full flex flex-col items-center text-center">
+                    <div class="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-500">
+                        <i data-lucide="book-open" class="w-10 h-10 text-emerald-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-black text-emerald-900 mb-3">المقالات</h2>
+                    <p class="text-slate-600 font-semibold mb-6 flex-grow">خلاصة التجارب، تطوير الذات، ومقالات بتخاطب عقلك وروحك بطريقة عملية ومبسطة.</p>
+                    <span class="inline-flex items-center gap-2 text-emerald-600 font-bold group-hover:gap-4 transition-all">
+                        تصفح المقالات <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </span>
+                </div>
+            </a>
+
+            <a href="books.html" class="block group">
+                <div class="glass-panel p-8 rounded-3xl bg-white/60 border-white/80 hover:bg-white/90 transition duration-500 hover:shadow-xl h-full flex flex-col items-center text-center transform md:-translate-y-4">
+                    <div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-500 shadow-inner">
+                        <i data-lucide="library" class="w-10 h-10 text-blue-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-black text-emerald-900 mb-3">المكتبة والكتب</h2>
+                    <p class="text-slate-600 font-semibold mb-6 flex-grow">مجموعة مختارة بعناية من الكتب والموارد اللي هتساعدك تبني وعي حقيقي وعادات ثابتة.</p>
+                    <span class="inline-flex items-center gap-2 text-blue-600 font-bold group-hover:gap-4 transition-all">
+                        اكتشف المكتبة <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </span>
+                </div>
+            </a>
+
+            <a href="gallery.html" class="block group">
+                <div class="glass-panel p-8 rounded-3xl bg-white/60 border-white/80 hover:bg-white/90 transition duration-500 hover:shadow-xl h-full flex flex-col items-center text-center">
+                    <div class="w-20 h-20 rounded-full bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-500">
+                        <i data-lucide="image" class="w-10 h-10 text-orange-600"></i>
+                    </div>
+                    <h2 class="text-2xl font-black text-emerald-900 mb-3">معرض التصميمات</h2>
+                    <p class="text-slate-600 font-semibold mb-6 flex-grow">تغذية بصرية، تصاميم ملهمة، واقتباسات تقدر تشاركها وتحفظها عندك.</p>
+                    <span class="inline-flex items-center gap-2 text-orange-600 font-bold group-hover:gap-4 transition-all">
+                        شوف الإبداع <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

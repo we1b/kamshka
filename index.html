@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | الرئيسية</title>
+    
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="home">
+    <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
+    
+    <div id="header-ph"></div>
+
+    <main class="pt-32 px-4 container mx-auto text-center min-h-screen">
+        <div class="glass-panel p-12 rounded-3xl mb-12 fade-in bg-white/40 border-white/60">
+            <h1 class="text-5xl md:text-8xl font-black mb-6 text-emerald-800 drop-shadow-sm">كمشكاة</h1>
+            <p class="text-2xl text-slate-700 font-bold mb-10">استعن بالله ولا تعجز</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="start.html" class="bg-emerald-600 px-10 py-4 rounded-2xl font-bold text-white hover:bg-emerald-700 transition shadow-lg shadow-emerald-300/50 text-lg flex items-center justify-center gap-2">
+                    <i data-lucide="compass"></i> <span>ابدأ رحلتك من هنا</span>
+                </a>
+                <a href="gallery.html" class="bg-white/80 px-10 py-4 rounded-2xl font-bold text-emerald-800 hover:bg-white transition shadow-sm text-lg border border-emerald-100 flex items-center justify-center gap-2">
+                    <i data-lucide="image"></i> <span>معرض التصميمات</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 fade-in delay-100">
+            <div class="glass-panel p-8 rounded-2xl bg-white/60 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl font-black text-emerald-600 mb-2 counter-number" data-target="9000">0+</div>
+                <div class="text-slate-600 font-bold text-lg">مقال ملهم</div>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl bg-white/60 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl font-black text-emerald-600 mb-2 counter-number" data-target="500">0+</div>
+                <div class="text-slate-600 font-bold text-lg">كتاب ومورد</div>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl bg-white/60 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl font-black text-emerald-600 mb-2">∞</div>
+                <div class="text-slate-600 font-bold text-lg">أثر يبقى</div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-ph"></div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
