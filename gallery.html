@@ -7,48 +7,55 @@
     <link rel="icon" type="image/png" href="images/ui/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="text-slate-800 min-h-screen flex flex-col relative pt-6">
 
-    <div class="fixed inset-0 bg-white/30 -z-10"></div>
+    <div class="fixed inset-0 -z-20">
+        <img src="images/ui/bg.jpg" class="w-full h-full object-cover" alt="خلفية كمشكاة">
+    </div>
+    
+    <div class="fixed inset-0 bg-white/40 -z-10 backdrop-blur-[2px]"></div>
 
-    <nav class="glass-panel container mx-auto px-6 py-4 rounded-3xl shadow-xl flex justify-between items-center w-[95%] max-w-7xl sticky top-4 z-50 transition-all duration-500">
-        <a href="index.html" class="flex items-center gap-3">
-            <img src="images/ui/logo.png" alt="لوجو كمشكاة" class="h-10 w-10 object-contain drop-shadow-md">
-            <span class="text-2xl font-bold text-emerald-800 tracking-wide">كمشكاة</span>
-        </a>
-        <div class="hidden md:flex space-x-8 space-x-reverse text-lg font-semibold">
+    <nav class="glass-panel container mx-auto px-6 py-4 rounded-3xl shadow-xl flex items-center justify-between w-[95%] max-w-7xl sticky top-4 z-50 transition-all duration-500 relative">
+        
+        <a href="index.html" class="text-3xl font-extrabold text-emerald-800 tracking-wide">كمشكاة</a>
+        
+        <div class="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 space-x-8 space-x-reverse text-lg font-bold text-slate-700">
             <a href="index.html" class="hover:text-emerald-600 transition-colors">الرئيسية</a>
-            <a href="articles.html" class="hover:text-emerald-600 transition-colors">المقالات</a>
             <a href="books.html" class="hover:text-emerald-600 transition-colors">الكتب</a>
+            <a href="articles.html" class="hover:text-emerald-600 transition-colors">المقالات</a>
+            <a href="gallery.html" class="text-emerald-700 hover:text-emerald-500 transition-colors">المعرض</a>
             <a href="start.html" class="hover:text-emerald-600 transition-colors">ابدأ من هنا</a>
             <a href="about.html" class="hover:text-emerald-600 transition-colors">من نحن</a>
+            <a href="contact.html" class="hover:text-emerald-600 transition-colors">تواصل معنا</a>
         </div>
-        <button id="mobile-menu-btn" class="md:hidden text-slate-800 focus:outline-none">
+
+        <button id="mobile-menu-btn" class="lg:hidden text-emerald-800 focus:outline-none">
             <i data-lucide="menu" class="w-8 h-8"></i>
         </button>
     </nav>
 
-    <div id="mobile-menu" class="hidden container mx-auto w-[95%] mt-2 rounded-3xl p-4 flex-col space-y-4 text-center text-lg font-semibold md:hidden absolute z-40 top-24 left-0 right-0">
+    <div id="mobile-menu" class="hidden container mx-auto w-[95%] mt-2 rounded-3xl p-4 flex-col space-y-4 text-center text-lg font-semibold absolute z-40 top-24 left-0 right-0 glass-panel">
         <a href="index.html" class="block hover:text-emerald-600">الرئيسية</a>
-        <a href="articles.html" class="block hover:text-emerald-600">المقالات</a>
         <a href="books.html" class="block hover:text-emerald-600">الكتب</a>
+        <a href="articles.html" class="block hover:text-emerald-600">المقالات</a>
+        <a href="gallery.html" class="block text-emerald-700">المعرض</a>
         <a href="start.html" class="block hover:text-emerald-600">ابدأ من هنا</a>
         <a href="about.html" class="block hover:text-emerald-600">من نحن</a>
+        <a href="contact.html" class="block hover:text-emerald-600">تواصل معنا</a>
     </div>
 
     <main class="flex-grow container mx-auto px-4 py-12 w-[95%] max-w-7xl">
         
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 glass-panel p-8 rounded-3xl border-white/60 bg-white/40">
             <h1 class="text-4xl font-extrabold text-emerald-900 mb-4">معرض إبداعات كمشكاة</h1>
             <p class="text-xl text-slate-700 font-medium">مساحة بصرية لبعض التصميمات والأفكار بنظام العرض الشبكي</p>
         </div>
 
-        <!-- شبكة المعرض بنظام بنترست (Masonry Layout) -->
         <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
             
-            <!-- صورة طولية -->
             <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
                 <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
@@ -57,7 +64,6 @@
                 </div>
             </div>
 
-            <!-- صورة عرضية -->
             <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
                 <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
@@ -66,7 +72,6 @@
                 </div>
             </div>
 
-            <!-- صورة مربعة -->
             <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
                 <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&h=600&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
@@ -75,7 +80,6 @@
                 </div>
             </div>
 
-            <!-- المزيد من الصور لتوضيح تأثير بنترست -->
             <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
                 <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&h=800&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
@@ -93,7 +97,24 @@
         </div>
     </main>
 
-    <footer class="glass-panel container mx-auto rounded-t-3xl shadow-xl py-6 text-center w-[95%] max-w-7xl mt-auto">
+    <footer class="glass-panel container mx-auto rounded-t-3xl shadow-xl py-8 text-center w-[95%] max-w-7xl mt-auto">
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="https://www.facebook.com/profile.php?id=61583541613263&locale=ar_AR" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-facebook-f text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/kmshka.official/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-instagram text-xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/kamshkamustafa/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-linkedin-in text-xl"></i>
+            </a>
+            <a href="https://t.me/kamshkaonline" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-telegram text-xl"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VaobuNjKgsNwqB3rtv3B" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+            </a>
+        </div>
         <p class="text-slate-600 font-semibold">جميع الحقوق محفوظة © كمشكاة</p>
     </footer>
 
