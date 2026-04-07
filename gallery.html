@@ -14,29 +14,28 @@
     <div class="fixed-bg"><img src="images/bg.jpg" onerror="this.style.display='none'"></div>
     <div id="header-ph"></div>
 
-    <!-- لايت بوكس لعرض الصور بحجم كامل -->
     <div id="lightbox" onclick="closeLightbox()" class="fixed inset-0 z-[9999] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-2 transition-opacity duration-300">
         <button class="absolute top-5 right-5 bg-white/10 text-white p-3 rounded-full hover:bg-white/20 transition z-50">
             <i data-lucide="x" class="w-6 h-6"></i>
         </button>
         <img id="lightbox-img" src="" class="max-h-[90vh] max-w-full rounded-lg shadow-2xl object-contain transition-transform duration-300 scale-95" onclick="event.stopPropagation()">
-        <a id="lightbox-download" href="#" download class="absolute bottom-8 bg-emerald-600 text-white px-8 py-3 rounded-full font-bold shadow-2xl flex items-center gap-2 hover:bg-emerald-700 transition transform hover:scale-105" onclick="event.stopPropagation()">
+        
+        <button id="lightbox-download" class="absolute bottom-8 bg-teal-600 text-white px-8 py-3 rounded-full font-bold shadow-2xl flex items-center gap-2 hover:bg-teal-700 transition transform hover:scale-105" onclick="downloadCurrentImage(event)">
             <i data-lucide="download" class="w-5 h-5"></i> تحميل الصورة
-        </a>
+        </button>
     </div>
 
     <main class="pt-32 px-4 container mx-auto min-h-screen pb-12">
         <div class="text-center mb-12 fade-in">
-            <h1 class="text-4xl md:text-5xl font-black text-emerald-900 mb-2">معرض التصميمات</h1>
+            <h1 class="text-4xl md:text-5xl font-black text-teal-900 mb-2">معرض التصميمات</h1>
             <p class="text-slate-600 font-bold text-lg">إبداع متجدد وتغذية بصرية</p>
         </div>
 
         <div id="gallery-grid" class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-            <!-- الصور هتتضاف هنا بالجافاسكريبت -->
         </div>
 
         <div class="text-center mt-12">
-            <button id="load-more-gallery" class="bg-white/80 text-emerald-800 px-8 py-3 rounded-full font-bold hover:bg-white transition border border-emerald-200 shadow-md inline-flex items-center gap-2">
+            <button id="load-more-gallery" class="bg-white/80 text-teal-800 px-8 py-3 rounded-full font-bold hover:bg-white transition border border-teal-200 shadow-md inline-flex items-center gap-2">
                 عرض المزيد <i data-lucide="arrow-down" class="w-5 h-5"></i>
             </button>
         </div>
@@ -45,10 +44,10 @@
     <div id="footer-ph"></div>
     <script src="js/main.js"></script>
     <script>
-        // الأرقام دي بترمز لأسماء الصور من 1 لـ 10000 زي ما اتفقنا
         const galleryImages = ["1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG"];
         let visibleCount = 0;
         const INCREMENT = 6;
+        let currentImageSrc = "";
 
         document.addEventListener('DOMContentLoaded', () => {
             loadGalleryBatch();
@@ -75,18 +74,30 @@
             for(let i=start; i<end; i++) {
                 const imgName = galleryImages[i];
                 const imgSrc = `images/${imgName}`;
-                const fallbackImg = `https://placehold.co/600x800/dcfce7/065f46?text=صورة+${i+1}`;
+                const fallbackImg = `https://placehold.co/600x800/ccfbf1/0f766e?text=صورة+${i+1}`;
+                const randomLikes = Math.floor(Math.random() * 500) + 50;
 
                 html += `
-                <div class="break-inside-avoid glass-panel rounded-3xl overflow-hidden group relative bg-white/40 border border-white hover:shadow-xl transition duration-500 fade-in">
+                <div class="break-inside-avoid glass-panel rounded-3xl overflow-hidden group relative bg-white/40 border border-white hover:shadow-xl transition duration-500 fade-in flex flex-col">
                     <div class="cursor-pointer relative overflow-hidden" onclick="openLightbox('${imgSrc}')">
                         <img src="${imgSrc}" loading="lazy" class="w-full h-auto block transform transition duration-700 group-hover:scale-105" 
                              onerror="this.onerror=null; this.src='${fallbackImg}'">
-                        <div class="absolute inset-0 bg-emerald-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <div class="bg-white/90 text-emerald-900 p-4 rounded-full shadow-lg transform scale-75 group-hover:scale-100 transition duration-300">
+                        <div class="absolute inset-0 bg-teal-900/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <div class="bg-white/90 text-teal-900 p-4 rounded-full shadow-lg transform scale-75 group-hover:scale-100 transition duration-300">
                                 <i data-lucide="zoom-in" class="w-6 h-6"></i>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="p-4 flex justify-between items-center bg-white/50 backdrop-blur-sm border-t border-white/50">
+                        <button onclick="toggleLike(this)" class="flex items-center gap-1.5 text-slate-500 hover:text-red-500 transition group/like">
+                            <i data-lucide="heart" class="w-5 h-5 transition transform group-active/like:scale-125"></i>
+                            <span class="like-count text-sm font-bold font-sans mt-0.5">${randomLikes}</span>
+                        </button>
+
+                        <button onclick="shareGalleryImage('${imgSrc}')" class="text-teal-600 hover:bg-teal-50 p-2 rounded-lg transition font-bold flex items-center gap-2" title="مشاركة">
+                            <i data-lucide="share-2" class="w-5 h-5"></i> مشاركة
+                        </button>
                     </div>
                 </div>`;
             }
@@ -97,11 +108,11 @@
         }
 
         function openLightbox(src) {
+            currentImageSrc = src;
             const lb = document.getElementById('lightbox');
             const img = document.getElementById('lightbox-img');
-            const dl = document.getElementById('lightbox-download');
             img.src = src;
-            dl.href = src;
+            
             lb.classList.remove('hidden');
             lb.classList.add('flex');
             setTimeout(() => img.classList.replace('scale-95', 'scale-100'), 10);
@@ -115,6 +126,44 @@
                 lb.classList.add('hidden');
                 lb.classList.remove('flex');
             }, 300);
+        }
+
+        function downloadCurrentImage(event) {
+            event.stopPropagation();
+            if(!currentImageSrc) return;
+            
+            const fileName = currentImageSrc.split('/').pop() || 'kamshkat-design.jpg';
+            
+            fetch(currentImageSrc)
+                .then(response => response.blob())
+                .then(blob => {
+                    const blobUrl = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = blobUrl;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    window.URL.revokeObjectURL(blobUrl);
+                })
+                .catch(() => {
+                    const a = document.createElement('a');
+                    a.href = currentImageSrc;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                });
+        }
+
+        function shareGalleryImage(imgSrc) {
+            const fullUrl = new URL(imgSrc, window.location.href).href;
+            if (navigator.share) {
+                navigator.share({ title: 'تصميم من كمشكاة', url: fullUrl }).catch(console.error);
+            } else {
+                navigator.clipboard.writeText(fullUrl);
+                alert('تم نسخ رابط الصورة للمشاركة!');
+            }
         }
     </script>
 </body>
