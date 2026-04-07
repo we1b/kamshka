@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كمشكاة | الصفحة الرئيسية</title>
+    <title>كمشكاة | الرئيسية</title>
+    <!-- اللوجو في المتصفح -->
+    <link rel="icon" type="image/png" href="images/ui/logo.png">
     <!-- تضمين مكتبة تيلويند -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- فونت أوسوم لأيقونات السوشيال -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- تضمين ملف التنسيقات الخاص بنا -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="text-slate-800 min-h-screen flex flex-col relative pt-6">
+<body class="text-slate-800 min-h-screen flex flex-col relative pt-6" data-page="home">
 
-    <!-- طبقة شفافة إضافية لضمان التباين لو الصورة فاتحة جدا -->
+    <!-- طبقة شفافة إضافية لضمان التباين لو الصورة فاتحة جدا، والخلفية مظبوطة في الـ CSS -->
     <div class="fixed inset-0 bg-white/30 -z-10"></div>
 
     <!-- الهيدر الزجاجي -->
     <nav class="glass-panel container mx-auto px-6 py-4 rounded-3xl shadow-xl flex justify-between items-center w-[95%] max-w-7xl sticky top-4 z-50 transition-all duration-500">
-        <a href="index.html" class="text-2xl font-bold text-emerald-800 tracking-wide">كمشكاة</a>
+        <a href="index.html" class="flex items-center gap-3">
+            <img src="images/ui/logo.png" alt="لوجو كمشكاة" class="h-10 w-10 object-contain drop-shadow-md">
+            <span class="text-2xl font-bold text-emerald-800 tracking-wide">كمشكاة</span>
+        </a>
         
         <!-- القائمة لأجهزة الكمبيوتر -->
         <div class="hidden md:flex space-x-8 space-x-reverse text-lg font-semibold">
@@ -29,7 +37,7 @@
 
         <!-- زر الموبايل -->
         <button id="mobile-menu-btn" class="md:hidden text-slate-800 focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <i data-lucide="menu" class="w-8 h-8"></i>
         </button>
     </nav>
 
@@ -45,31 +53,64 @@
     <!-- المحتوى الرئيسي -->
     <main class="flex-grow container mx-auto px-4 py-12 w-[95%] max-w-7xl flex flex-col justify-center items-center text-center">
         
-        <!-- كارت الترحيب الكبير -->
-        <div class="glass-panel rounded-3xl shadow-xl p-10 md:p-20 w-full max-w-4xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
-            <h1 class="text-5xl md:text-6xl font-extrabold text-emerald-900 mb-6 leading-tight">
-                أنر عقلك <br> مع كمشكاة
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-700 mb-10 leading-relaxed font-medium">
-                مساحتك الهادئة للتعلم، الاستكشاف، وتطوير الذات في بيئة مصممة لراحتك البصرية والذهنية.
-            </p>
+        <!-- كارت الترحيب الكبير بناء على طلبك -->
+        <div class="glass-panel p-12 rounded-3xl mb-12 bg-white/40 border-white/60 w-full max-w-4xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
+            <img src="images/ui/logo.png" alt="لوجو كمشكاة" class="h-24 w-24 mx-auto mb-6 object-contain drop-shadow-lg">
+            <h1 class="text-5xl md:text-8xl font-black mb-6 text-emerald-800 drop-shadow-sm">كمشكاة</h1>
+            <p class="text-2xl text-slate-700 font-bold mb-10">"استعن بالله ولا تعجز"</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="start.html" class="glass-panel px-8 py-4 rounded-full text-lg font-bold text-emerald-800 border-emerald-200 hover:bg-white/80 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                    ابدأ رحلتك
+                <a href="start.html" class="bg-emerald-600 px-10 py-4 rounded-2xl font-bold text-white hover:bg-emerald-700 transition shadow-lg shadow-emerald-300/50 text-lg flex items-center justify-center gap-2">
+                    <i data-lucide="zap"></i> <span>ابدأ رحلتك</span>
                 </a>
-                <a href="articles.html" class="glass-panel px-8 py-4 rounded-full text-lg font-bold text-slate-700 hover:bg-white/80 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                    تصفح المقالات
+                <a href="gallery.html" class="bg-white/80 px-10 py-4 rounded-2xl font-bold text-emerald-800 hover:bg-white transition shadow-sm text-lg border border-emerald-100 flex items-center justify-center gap-2">
+                    <i data-lucide="image"></i> <span>شوف الإبداع</span>
                 </a>
+            </div>
+        </div>
+
+        <!-- العدادات -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+            <div class="glass-panel p-8 rounded-2xl bg-white/60 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl font-black text-emerald-600 mb-2">0+</div>
+                <div class="text-slate-600 font-bold text-lg">زائر للموقع</div>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl bg-white/60 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl font-black text-emerald-600 mb-2">0+</div>
+                <div class="text-slate-600 font-bold text-lg">مقال وكتاب</div>
+            </div>
+            <div class="glass-panel p-8 rounded-2xl bg-white/60 hover:-translate-y-2 transition duration-300">
+                <div class="text-5xl font-black text-emerald-600 mb-2">∞</div>
+                <div class="text-slate-600 font-bold text-lg">طموح بلا حدود</div>
             </div>
         </div>
 
     </main>
 
-    <!-- الفوتر -->
-    <footer class="glass-panel container mx-auto rounded-t-3xl shadow-xl py-6 text-center w-[95%] max-w-7xl mt-auto">
+    <!-- الفوتر مع بيانات التواصل -->
+    <footer class="glass-panel container mx-auto rounded-t-3xl shadow-xl py-8 text-center w-[95%] max-w-7xl mt-auto">
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="https://www.facebook.com/profile.php?id=61583541613263&locale=ar_AR" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-facebook-f text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/kmshka.official/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-instagram text-xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/kamshkamustafa/" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-linkedin-in text-xl"></i>
+            </a>
+            <a href="https://t.me/kamshkaonline" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-telegram text-xl"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VaobuNjKgsNwqB3rtv3B" target="_blank" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-emerald-700 hover:bg-emerald-600 hover:text-white transition-all hover:-translate-y-1">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+            </a>
+        </div>
         <p class="text-slate-600 font-semibold">جميع الحقوق محفوظة © كمشكاة</p>
     </footer>
 
+    <script>
+        lucide.createIcons();
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

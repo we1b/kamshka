@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المعرض | كمشكاة</title>
+    <link rel="icon" type="image/png" href="images/ui/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="text-slate-800 min-h-screen flex flex-col relative pt-6">
@@ -12,7 +14,10 @@
     <div class="fixed inset-0 bg-white/30 -z-10"></div>
 
     <nav class="glass-panel container mx-auto px-6 py-4 rounded-3xl shadow-xl flex justify-between items-center w-[95%] max-w-7xl sticky top-4 z-50 transition-all duration-500">
-        <a href="index.html" class="text-2xl font-bold text-emerald-800 tracking-wide">كمشكاة</a>
+        <a href="index.html" class="flex items-center gap-3">
+            <img src="images/ui/logo.png" alt="لوجو كمشكاة" class="h-10 w-10 object-contain drop-shadow-md">
+            <span class="text-2xl font-bold text-emerald-800 tracking-wide">كمشكاة</span>
+        </a>
         <div class="hidden md:flex space-x-8 space-x-reverse text-lg font-semibold">
             <a href="index.html" class="hover:text-emerald-600 transition-colors">الرئيسية</a>
             <a href="articles.html" class="hover:text-emerald-600 transition-colors">المقالات</a>
@@ -21,7 +26,7 @@
             <a href="about.html" class="hover:text-emerald-600 transition-colors">من نحن</a>
         </div>
         <button id="mobile-menu-btn" class="md:hidden text-slate-800 focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <i data-lucide="menu" class="w-8 h-8"></i>
         </button>
     </nav>
 
@@ -36,31 +41,52 @@
     <main class="flex-grow container mx-auto px-4 py-12 w-[95%] max-w-7xl">
         
         <div class="text-center mb-12">
-            <h1 class="text-4xl font-extrabold text-emerald-900 mb-4">معرض الأعمال</h1>
-            <p class="text-xl text-slate-700 font-medium">مساحة بصرية لبعض التصميمات والأفكار</p>
+            <h1 class="text-4xl font-extrabold text-emerald-900 mb-4">معرض إبداعات كمشكاة</h1>
+            <p class="text-xl text-slate-700 font-medium">مساحة بصرية لبعض التصميمات والأفكار بنظام العرض الشبكي</p>
         </div>
 
-        <!-- شبكة المعرض -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- شبكة المعرض بنظام بنترست (Masonry Layout) -->
+        <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
             
-            <div class="glass-panel rounded-3xl overflow-hidden relative group aspect-square">
-                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" alt="تصميم" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-emerald-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
-                    <span class="text-white font-bold text-xl">بوستر إعلاني</span>
+            <!-- صورة طولية -->
+            <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
+                    <span class="text-white font-bold text-xl mb-2">بوستر إعلاني</span>
+                    <a href="#" class="bg-white text-emerald-800 px-4 py-2 rounded-full font-bold text-sm hover:bg-emerald-100 transition">عرض التفاصيل</a>
                 </div>
             </div>
 
-            <div class="glass-panel rounded-3xl overflow-hidden relative group aspect-square">
-                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" alt="تصميم" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-emerald-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
-                    <span class="text-white font-bold text-xl">هوية بصرية</span>
+            <!-- صورة عرضية -->
+            <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
+                    <span class="text-white font-bold text-xl mb-2">هوية بصرية</span>
+                    <a href="#" class="bg-white text-emerald-800 px-4 py-2 rounded-full font-bold text-sm hover:bg-emerald-100 transition">عرض التفاصيل</a>
                 </div>
             </div>
 
-            <div class="glass-panel rounded-3xl overflow-hidden relative group aspect-square">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="تصميم" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-emerald-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
-                    <span class="text-white font-bold text-xl">تصميم واجهة</span>
+            <!-- صورة مربعة -->
+            <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&h=600&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
+                    <span class="text-white font-bold text-xl mb-2">تصميم واجهة</span>
+                    <a href="#" class="bg-white text-emerald-800 px-4 py-2 rounded-full font-bold text-sm hover:bg-emerald-100 transition">عرض التفاصيل</a>
+                </div>
+            </div>
+
+            <!-- المزيد من الصور لتوضيح تأثير بنترست -->
+            <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&h=800&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
+                    <span class="text-white font-bold text-xl mb-2">تصميم سوشيال</span>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-3xl overflow-hidden relative group break-inside-avoid">
+                <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=600&h=400&q=80" alt="تصميم" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-emerald-900/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center backdrop-blur-sm">
+                    <span class="text-white font-bold text-xl mb-2">لوجو ديزاين</span>
                 </div>
             </div>
 
@@ -71,6 +97,9 @@
         <p class="text-slate-600 font-semibold">جميع الحقوق محفوظة © كمشكاة</p>
     </footer>
 
+    <script>
+        lucide.createIcons();
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
