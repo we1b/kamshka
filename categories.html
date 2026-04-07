@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التصنيفات | كمشكاة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col relative pt-6">
+
+    <div class="fixed inset-0 bg-white/30 -z-10"></div>
+
+    <nav class="glass-panel container mx-auto px-6 py-4 rounded-3xl shadow-xl flex justify-between items-center w-[95%] max-w-7xl sticky top-4 z-50 transition-all duration-500">
+        <a href="index.html" class="text-2xl font-bold text-emerald-800 tracking-wide">كمشكاة</a>
+        <div class="hidden md:flex space-x-8 space-x-reverse text-lg font-semibold">
+            <a href="index.html" class="hover:text-emerald-600 transition-colors">الرئيسية</a>
+            <a href="articles.html" class="text-emerald-700 hover:text-emerald-500 transition-colors">المقالات</a>
+            <a href="books.html" class="hover:text-emerald-600 transition-colors">الكتب</a>
+            <a href="start.html" class="hover:text-emerald-600 transition-colors">ابدأ من هنا</a>
+            <a href="about.html" class="hover:text-emerald-600 transition-colors">من نحن</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-800 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden container mx-auto w-[95%] mt-2 rounded-3xl p-4 flex-col space-y-4 text-center text-lg font-semibold md:hidden absolute z-40 top-24 left-0 right-0">
+        <a href="index.html" class="block hover:text-emerald-600">الرئيسية</a>
+        <a href="articles.html" class="block text-emerald-700">المقالات</a>
+        <a href="books.html" class="block hover:text-emerald-600">الكتب</a>
+        <a href="start.html" class="block hover:text-emerald-600">ابدأ من هنا</a>
+        <a href="about.html" class="block hover:text-emerald-600">من نحن</a>
+    </div>
+
+    <main class="flex-grow container mx-auto px-4 py-12 w-[95%] max-w-7xl">
+        
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-emerald-900 mb-4">تصنيفات المقالات</h1>
+            <p class="text-xl text-slate-700 font-medium">اختار المجال اللي حابب تقرأ فيه وتطور نفسك</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <a href="category-view.html" class="glass-panel rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group border-t-4 border-t-emerald-500">
+                <div class="w-16 h-16 mx-auto bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-emerald-200 transition-colors">
+                    <svg class="w-8 h-8 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">تطوير الذات</h2>
+                <p class="text-slate-600 font-medium">مقالات تساعدك تبني عادات أفضل وتفهم نفسك.</p>
+            </a>
+
+            <a href="category-view.html" class="glass-panel rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group border-t-4 border-t-blue-500">
+                <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+                    <svg class="w-8 h-8 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">إنتاجية</h2>
+                <p class="text-slate-600 font-medium">أدوات وتقنيات عشان تنجز أكتر في وقت أقل.</p>
+            </a>
+
+            <a href="category-view.html" class="glass-panel rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group border-t-4 border-t-purple-500">
+                <div class="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
+                    <svg class="w-8 h-8 text-purple-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">تقنية</h2>
+                <p class="text-slate-600 font-medium">أحدث التطورات في الذكاء الاصطناعي والتكنولوجيا.</p>
+            </a>
+
+            <a href="category-view.html" class="glass-panel rounded-3xl p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl group border-t-4 border-t-rose-500">
+                <div class="w-16 h-16 mx-auto bg-rose-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-rose-200 transition-colors">
+                    <svg class="w-8 h-8 text-rose-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">تصميم</h2>
+                <p class="text-slate-600 font-medium">مبادئ وأفكار تهم كل مصمم وصانع محتوى.</p>
+            </a>
+
+        </div>
+    </main>
+
+    <footer class="glass-panel container mx-auto rounded-t-3xl shadow-xl py-6 text-center w-[95%] max-w-7xl mt-auto">
+        <p class="text-slate-600 font-semibold">جميع الحقوق محفوظة © كمشكاة</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

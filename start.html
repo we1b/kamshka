@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كمشكاة | ابدأ من هنا</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col relative pt-6">
+
+    <div class="fixed inset-0 bg-white/30 -z-10"></div>
+
+    <!-- الهيدر الزجاجي -->
+    <nav class="glass-panel container mx-auto px-6 py-4 rounded-3xl shadow-xl flex justify-between items-center w-[95%] max-w-7xl sticky top-4 z-50 transition-all duration-500">
+        <a href="index.html" class="text-2xl font-bold text-emerald-800 tracking-wide">كمشكاة</a>
+        <div class="hidden md:flex space-x-8 space-x-reverse text-lg font-semibold">
+            <a href="index.html" class="hover:text-emerald-600 transition-colors">الرئيسية</a>
+            <a href="articles.html" class="hover:text-emerald-600 transition-colors">المقالات</a>
+            <a href="books.html" class="hover:text-emerald-600 transition-colors">الكتب</a>
+            <a href="start.html" class="text-emerald-700 hover:text-emerald-500 transition-colors">ابدأ من هنا</a>
+            <a href="about.html" class="hover:text-emerald-600 transition-colors">من نحن</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-800 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </nav>
+
+    <!-- قائمة الموبايل -->
+    <div id="mobile-menu" class="hidden container mx-auto w-[95%] mt-2 rounded-3xl p-4 flex-col space-y-4 text-center text-lg font-semibold md:hidden absolute z-40 top-24 left-0 right-0">
+        <a href="index.html" class="block hover:text-emerald-600">الرئيسية</a>
+        <a href="articles.html" class="block hover:text-emerald-600">المقالات</a>
+        <a href="books.html" class="block hover:text-emerald-600">الكتب</a>
+        <a href="start.html" class="block text-emerald-700">ابدأ من هنا</a>
+        <a href="about.html" class="block hover:text-emerald-600">من نحن</a>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="flex-grow container mx-auto px-4 py-12 w-[95%] max-w-7xl">
+        
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-emerald-900 mb-4">كيف تستفيد من كمشكاة؟</h1>
+            <p class="text-xl text-slate-700 font-medium">خطوات بسيطة عشان تبدأ رحلتك معانا صح</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- كارت الخطوة الأولى -->
+            <div class="glass-panel p-8 rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center text-center">
+                <div class="w-16 h-16 glass-panel rounded-full flex items-center justify-center text-3xl font-bold text-emerald-700 mb-6 border-2 border-emerald-300">1</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4">استكشف المقالات</h2>
+                <p class="text-slate-600 font-medium mb-6">اقرأ في المواضيع اللي تهمك، بننزل مقالات جديدة دوريا متقسمة تصنيفات عشان تسهل عليك.</p>
+                <a href="articles.html" class="mt-auto text-emerald-700 font-bold hover:text-emerald-500 transition-colors">يلا نبدأ القراءة &larr;</a>
+            </div>
+
+            <!-- كارت الخطوة الثانية -->
+            <div class="glass-panel p-8 rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center text-center">
+                <div class="w-16 h-16 glass-panel rounded-full flex items-center justify-center text-3xl font-bold text-emerald-700 mb-6 border-2 border-emerald-300">2</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4">تصفح الكتب</h2>
+                <p class="text-slate-600 font-medium mb-6">مكتبة مختارة بعناية فيها ملخصات وأهم الأفكار من أفضل الكتب اللي هتغير تفكيرك.</p>
+                <a href="books.html" class="mt-auto text-emerald-700 font-bold hover:text-emerald-500 transition-colors">دخول المكتبة &larr;</a>
+            </div>
+
+            <!-- كارت الخطوة الثالثة -->
+            <div class="glass-panel p-8 rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-center text-center">
+                <div class="w-16 h-16 glass-panel rounded-full flex items-center justify-center text-3xl font-bold text-emerald-700 mb-6 border-2 border-emerald-300">3</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-4">انضم للنشرة</h2>
+                <p class="text-slate-600 font-medium mb-6">سجل إيميلك معانا عشان يوصلك كل جديد أول بأول وتكون جزء من مجتمع كمشكاة.</p>
+                <a href="newsletter.html" class="mt-auto text-emerald-700 font-bold hover:text-emerald-500 transition-colors">اشترك دلوقتي &larr;</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="glass-panel container mx-auto rounded-t-3xl shadow-xl py-6 text-center w-[95%] max-w-7xl mt-auto">
+        <p class="text-slate-600 font-semibold">جميع الحقوق محفوظة © كمشكاة</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

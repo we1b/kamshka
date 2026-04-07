@@ -1,103 +1,37 @@
-/* Path: css/style.css */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
-
-:root {
-    --primary-color: #059669;
-    --primary-dark: #064e3b;
-    --text-dark: #1e293b;
-    --bg-gradient: linear-gradient(135deg, #fef9c3 0%, #dcfce7 50%, #cffafe 100%);
-}
+/* استيراد خط كايرو من جوجل */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
 
 body {
     font-family: 'Cairo', sans-serif;
-    background: var(--bg-gradient);
-    min-height: 100vh;
-    color: var(--text-dark);
-    /* 👇 حل مشكلة السكرول والتعليق */
-    overflow-x: hidden; 
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    /* صورة خلفية ناعمة مع دمج لوني لضمان وضوح التأثير الزجاجي */
+    background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=2000&q=80');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: #f1f5f9; /* لون فاتح ناعم slate-100 */
+    background-blend-mode: soft-light;
 }
 
-/* --- تنسيق قاعة المشاهدة الجديد (لحل تداخل النصوص) --- */
-#text-viewer {
-    /* مساحات داخلية كبيرة */
-    padding: 2rem !important; 
-    /* عشان الكلام ميركبش فوق بعضه */
-    overflow-wrap: break-word; 
-    word-wrap: break-word;
-}
-
-#text-lesson-content {
-    /* تباعد الأسطر (Line Height) */
-    line-height: 2 !important; 
-    /* حجم خط مريح */
-    font-size: 1.125rem; 
-    color: #334155;
-    text-align: justify;
-}
-
-/* تنسيق الفقرات والعناوين داخل الدرس النصي */
-#text-lesson-content p {
-    margin-bottom: 1.5rem !important;
-}
-
-#text-lesson-content h3 {
-    color: #047857;
-    font-weight: 800;
-    font-size: 1.5rem;
-    margin-top: 2.5rem !important;
-    margin-bottom: 1rem !important;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e2e8f0;
-}
-
-#text-lesson-content ul, 
-#text-lesson-content ol {
-    margin-bottom: 1.5rem !important;
-    padding-right: 1.5rem;
-    list-style-type: disc;
-}
-
-#text-lesson-content li {
-    margin-bottom: 0.75rem !important;
-}
-
-/* صناديق مميزة داخل النص */
-.lesson-box {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 1.5rem !important;
-    border-radius: 0.75rem;
-    margin: 2rem 0 !important;
-}
-
-.box-green { border-right: 4px solid #10b981; background-color: #ecfdf5; }
-.box-yellow { border-right: 4px solid #f59e0b; background-color: #fffbeb; }
-.box-red { border-right: 4px solid #ef4444; background-color: #fef2f2; }
-
-/* --- باقي الستايل الأساسي --- */
-.fixed-bg { position: fixed; inset: 0; z-index: -1; }
-.fixed-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95); }
-
+/* التأثير الزجاجي الأساسي كما طلبت بالظبط */
 .glass-panel {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
-.glass-panel input { background: rgba(255, 255, 255, 0.6); border: 1px solid rgba(255, 255, 255, 0.5); }
-.glass-panel input:focus { background: rgba(255, 255, 255, 0.9); box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2); }
 
-#lightbox { position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: 0.3s; }
-#lightbox.active { opacity: 1; visibility: visible; }
-#lightbox img { max-height: 85vh; max-width: 90vw; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-
-.masonry-grid { column-count: 1; column-gap: 1.5rem; }
-@media (min-width: 640px) { .masonry-grid { column-count: 2; } }
-@media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
-.break-inside-avoid { break-inside: avoid; margin-bottom: 1.5rem; }
-
-.fade-in { opacity: 0; animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+/* إخفاء شريط التمرير الجانبي للحفاظ على نظافة التصميم */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.5);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(15, 118, 110, 0.5); /* لون إيميرالد متوافق */
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(15, 118, 110, 0.8);
+}

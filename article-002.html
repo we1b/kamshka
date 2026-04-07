@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أدوات وتقنيات لتنظيم وقتك بفاعلية | كمشكاة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-slate-800 min-h-screen flex flex-col relative pt-6">
+
+    <div class="fixed inset-0 bg-white/30 -z-10"></div>
+
+    <nav class="glass-panel container mx-auto px-6 py-4 rounded-3xl shadow-xl flex justify-between items-center w-[95%] max-w-7xl sticky top-4 z-50 transition-all duration-500">
+        <a href="index.html" class="text-2xl font-bold text-emerald-800 tracking-wide">كمشكاة</a>
+        <div class="hidden md:flex space-x-8 space-x-reverse text-lg font-semibold">
+            <a href="index.html" class="hover:text-emerald-600 transition-colors">الرئيسية</a>
+            <a href="articles.html" class="text-emerald-700 hover:text-emerald-500 transition-colors">المقالات</a>
+            <a href="books.html" class="hover:text-emerald-600 transition-colors">الكتب</a>
+            <a href="start.html" class="hover:text-emerald-600 transition-colors">ابدأ من هنا</a>
+            <a href="about.html" class="hover:text-emerald-600 transition-colors">من نحن</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-slate-800 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden container mx-auto w-[95%] mt-2 rounded-3xl p-4 flex-col space-y-4 text-center text-lg font-semibold md:hidden absolute z-40 top-24 left-0 right-0">
+        <a href="index.html" class="block hover:text-emerald-600">الرئيسية</a>
+        <a href="articles.html" class="block text-emerald-700">المقالات</a>
+        <a href="books.html" class="block hover:text-emerald-600">الكتب</a>
+        <a href="start.html" class="block hover:text-emerald-600">ابدأ من هنا</a>
+        <a href="about.html" class="block hover:text-emerald-600">من نحن</a>
+    </div>
+
+    <main class="flex-grow container mx-auto px-4 py-12 w-[95%] max-w-4xl">
+        <article class="glass-panel rounded-3xl shadow-xl overflow-hidden mb-12">
+            <div class="w-full h-64 md:h-96 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80" alt="غلاف المقال" class="w-full h-full object-cover">
+            </div>
+            
+            <div class="p-8 md:p-12">
+                <div class="flex items-center gap-4 mb-6 text-sm font-bold">
+                    <a href="category-view.html" class="text-emerald-600 hover:text-emerald-800 transition-colors">إنتاجية</a>
+                    <span class="text-slate-400">|</span>
+                    <span class="text-slate-500">15 أكتوبر 2023</span>
+                </div>
+                
+                <h1 class="text-3xl md:text-5xl font-extrabold text-emerald-900 mb-8 leading-tight">أدوات وتقنيات لتنظيم وقتك بفاعلية</h1>
+                
+                <div class="prose prose-lg prose-slate max-w-none prose-headings:text-emerald-800 prose-a:text-emerald-600 font-medium leading-relaxed">
+                    <p class="text-xl text-slate-700 mb-6">إدارة الوقت ليست مجرد جدول زمني صارم، بل هي إدارة للطاقة والتركيز. في عالم مليء بالمشتتات، أصبح الحفاظ على التركيز مهارة أساسية للنجاح.</p>
+                    
+                    <h2 class="text-2xl font-bold mt-10 mb-4">تقنية البومودورو</h2>
+                    <p class="mb-6">تعتمد هذه التقنية على تقسيم وقت العمل إلى فترات زمنية، عادة 25 دقيقة، تليها استراحة قصيرة لمدة 5 دقائق. هذا الأسلوب يمنع الإرهاق الذهني ويحافظ على إنتاجيتك عالية طوال اليوم.</p>
+                    
+                    <h2 class="text-2xl font-bold mt-10 mb-4">أدوات ننصح بها</h2>
+                    <ul class="list-disc list-inside mb-6 space-y-2">
+                        <li>نوشن (Notion): لبناء نظامك المتكامل لإدارة الحياة.</li>
+                        <li>تودويست (Todoist): لإدارة المهام السريعة واليومية.</li>
+                        <li>جوجل كاليندر: لتنظيم المواعيد وحجز كتل زمنية للعمل العميق.</li>
+                    </ul>
+
+                    <div class="glass-panel p-6 rounded-2xl my-8 border-r-4 border-emerald-500">
+                        <p class="text-lg italic text-slate-700 m-0">لا تخبرني ما هي أولوياتك، أرني أين تقضي وقتك وسأخبرك أنا ما هي أولوياتك.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- أزرار التنقل -->
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-t border-emerald-200/50 pt-8">
+            <a href="article-001.html" class="glass-panel px-6 py-3 rounded-xl font-bold text-slate-700 hover:text-emerald-700 hover:bg-white/80 transition-all hover:-translate-y-1">
+                &rarr; المقال السابق
+            </a>
+            <a href="article-003.html" class="glass-panel px-6 py-3 rounded-xl font-bold text-emerald-800 border-emerald-200 hover:bg-white/80 transition-all hover:-translate-y-1 flex items-center gap-2">
+                المقال التالي &larr;
+            </a>
+        </div>
+    </main>
+
+    <footer class="glass-panel container mx-auto rounded-t-3xl shadow-xl py-6 text-center w-[95%] max-w-7xl mt-auto">
+        <p class="text-slate-600 font-semibold">جميع الحقوق محفوظة © كمشكاة</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

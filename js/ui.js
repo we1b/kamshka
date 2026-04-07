@@ -1,72 +1,60 @@
-/* Path: js/ui.js */
-// الوظيفة: واجهة المستخدم (تأثيرات الظهور، أنيميشن، مودال، Lightbox)
+// سكربت للتعامل مع واجهة المستخدم والرسائل التفاعلية
 
 document.addEventListener('DOMContentLoaded', () => {
-    initFadeInAnimations();
-});
+    
+    // دالة لإظهار رسالة منبثقة (Toast) بدل استخدام الـ alert المزعج
+    function showToast(message) {
+        const toastContainer = document.getElementById('toast-container');
+        const toastMessage = document.getElementById('toast-message');
+        
+        if (toastContainer && toastMessage) {
+            toastMessage.textContent = message;
+            toastContainer.classList.remove('hidden');
+            
+            // إضافة حركة ظهور
+            toastContainer.style.opacity = '0';
+            toastContainer.style.transform = 'translate(-50%, 20px)';
+            toastContainer.style.transition = 'all 0.3s ease';
+            
+            setTimeout(() => {
+                toastContainer.style.opacity = '1';
+                toastContainer.style.transform = 'translate(-50%, 0)';
+            }, 10);
 
-// تأثير الظهور التدريجي (Fade-in) للعناصر أثناء التمرير
-function initFadeInAnimations() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15 // العنصر يظهر لما 15% منه يدخل الشاشة
-    };
+            // إخفاء الرسالة بعد 3 ثواني
+            setTimeout(() => {
+                toastContainer.style.opacity = '0';
+                toastContainer.style.transform = 'translate(-50%, 20px)';
+                setTimeout(() => {
+                    toastContainer.classList.add('hidden');
+                }, 300);
+            }, 3000);
+        }
+    }
 
-    const fadeObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // إزالة كلاسات الإخفاء وإضافة كلاسات الظهور
-                entry.target.classList.add('opacity-100', 'translate-y-0');
-                entry.target.classList.remove('opacity-0', 'translate-y-10');
-                observer.unobserve(entry.target);
+    // التعامل مع نموذج النشرة البريدية
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // منع إعادة تحميل الصفحة
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            if(emailInput.value) {
+                showToast('تم الاشتراك في النشرة بنجاح، شكرا ليك!');
+                emailInput.value = ''; // تفريغ الحقل
             }
         });
-    }, observerOptions);
-
-    // تطبيق التأثير على أي عنصر واخد كلاس fade-in
-    document.querySelectorAll('.fade-in').forEach(el => {
-        // حالة البداية: مخفي ونازل لتحت شوية
-        el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
-        fadeObserver.observe(el);
-    });
-}
-
-// دالة فتح عارض الصور (Lightbox)
-window.openLightbox = function(src) {
-    const lb = document.getElementById('lightbox');
-    const img = document.getElementById('lightbox-img');
-    const dl = document.getElementById('lightbox-download');
-    
-    if(lb && img) {
-        img.src = src;
-        if(dl) dl.href = src;
-        
-        lb.classList.remove('hidden');
-        lb.classList.add('flex');
-        
-        // أنيميشن تكبير الصورة
-        setTimeout(() => { 
-            img.classList.remove('scale-95');
-            img.classList.add('scale-100'); 
-        }, 50);
     }
-};
 
-// دالة إغلاق عارض الصور
-window.closeLightbox = function() {
-    const lb = document.getElementById('lightbox');
-    const img = document.getElementById('lightbox-img');
-    
-    if(lb && img) {
-        // أنيميشن تصغير الصورة الأول
-        img.classList.remove('scale-100');
-        img.classList.add('scale-95');
-        
-        // إخفاء الـ Lightbox بعد الأنيميشن
-        setTimeout(() => {
-            lb.classList.add('hidden');
-            lb.classList.remove('flex');
-        }, 200);
+    // التعامل مع نموذج التواصل
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nameInput = document.getElementById('name');
+            if(nameInput && nameInput.value) {
+                showToast(`رسالتك وصلت يا ${nameInput.value}، هنرد عليك قريب!`);
+                contactForm.reset(); // تفريغ النموذج
+            }
+        });
     }
-};
+});
