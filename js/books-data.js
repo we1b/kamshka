@@ -48,17 +48,39 @@ function renderBooksList(containerId) {
     let html = '';
     booksData.forEach(book => {
         html += `
-            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl p-6 text-center flex flex-col items-center">
-                <a href="${book.id}.html" class="block w-full mb-6">
-                    <img src="${book.coverImage}" class="w-full h-64 object-cover rounded-xl shadow-md transform hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x600/dcfce7/065f46?text=غلاف+الكتاب'">
-                </a>
-                <h2 class="text-xl font-black text-emerald-900 mb-2">${book.title}</h2>
+            <div class="glass-panel rounded-3xl bg-white/60 border-white/80 overflow-hidden hover:-translate-y-2 transition duration-300 hover:shadow-xl p-6 text-center flex flex-col items-center group relative">
+                
+                <div class="relative w-full mb-6 overflow-hidden rounded-xl">
+                    <a href="${book.id}.html" class="block w-full">
+                        <img src="${book.coverImage}" class="w-full h-64 object-cover shadow-md transform group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/400x600/ccfbf1/0f766e?text=غلاف+الكتاب'">
+                    </a>
+                    
+                    <!-- زرار المشاركة بيظهر لما الماوس ييجي على الصورة -->
+                    <div class="absolute top-3 left-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <button onclick="shareItem('كتاب ${book.title}', window.location.origin + window.location.pathname.replace('library.html', '') + '${book.id}.html')" class="bg-white/90 backdrop-blur-sm text-teal-700 p-2.5 rounded-full shadow-lg hover:bg-teal-600 hover:text-white transition transform hover:scale-110" title="مشاركة">
+                            <i data-lucide="share-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <h2 class="text-xl font-black text-teal-900 mb-2">${book.title}</h2>
                 <p class="text-sm text-slate-500 font-bold mb-4">${book.author}</p>
-                <a href="${book.id}.html" class="mt-auto bg-emerald-100 text-emerald-800 px-6 py-2 rounded-full font-bold hover:bg-emerald-600 hover:text-white transition w-full">
-                    تفاصيل الكتاب
-                </a>
+                
+                <div class="mt-auto w-full flex flex-col gap-2">
+                    <a href="${book.id}.html" class="bg-teal-50 text-teal-800 px-6 py-2 rounded-xl font-bold hover:bg-teal-100 transition w-full flex items-center justify-center gap-2 shadow-sm">
+                        <i data-lucide="info" class="w-4 h-4"></i> التفاصيل
+                    </a>
+                    <a href="${book.pdfFile}" download class="bg-teal-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-teal-700 transition shadow-md w-full flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-4 h-4"></i> تحميل PDF
+                    </a>
+                </div>
             </div>
         `;
     });
     container.innerHTML = html;
+    
+    // تفعيل الأيقونات بعد إضافتها للصفحة
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 }
