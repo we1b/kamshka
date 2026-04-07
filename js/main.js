@@ -78,7 +78,6 @@ function loadNavbarFooter() {
     if (mobileBtn && mobileMenu) {
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
-            // Small delay to allow display:block to apply before animating opacity
             setTimeout(() => {
                 mobileMenu.classList.remove('opacity-0');
                 mobileMenu.classList.add('opacity-100');
@@ -116,7 +115,6 @@ function loadNavbarFooter() {
 // حماية المحتوى
 function initProtection() { 
     document.addEventListener('contextmenu', event => event.preventDefault()); 
-    // منع النسخ
     document.addEventListener('copy', event => {
         event.preventDefault();
     });
@@ -141,7 +139,6 @@ function initCounters() {
             }
         }
         
-        // تشغيل العداد لما يظهر في الشاشة
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting) {
                 animate();
@@ -152,3 +149,33 @@ function initCounters() {
         observer.observe(counter);
     });
 }
+
+// دوال المشاركة والتفاعل
+window.shareItem = function(title, url) {
+    const shareUrl = url || window.location.href;
+    if (navigator.share) {
+        navigator.share({ title: title || 'كمشكاة', url: shareUrl }).catch(console.error);
+    } else {
+        navigator.clipboard.writeText(shareUrl);
+        alert('تم نسخ الرابط للمشاركة!');
+    }
+};
+
+window.toggleLike = function(btnElement) {
+    const countSpan = btnElement.querySelector('.like-count');
+    const icon = btnElement.querySelector('i');
+    let count = parseInt(countSpan.innerText);
+    
+    if (btnElement.classList.contains('liked')) {
+        countSpan.innerText = count - 1;
+        btnElement.classList.remove('liked');
+        icon.classList.remove('fill-current', 'text-red-500');
+    } else {
+        countSpan.innerText = count + 1;
+        btnElement.classList.add('liked');
+        icon.classList.add('fill-current', 'text-red-500');
+    }
+    
+    icon.style.transform = 'scale(1.2)';
+    setTimeout(() => { icon.style.transform = 'scale(1)'; }, 200);
+};
